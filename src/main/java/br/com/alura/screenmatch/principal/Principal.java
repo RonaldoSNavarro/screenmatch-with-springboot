@@ -174,10 +174,10 @@ public class Principal {
 
     private void buscarSeriesPorQuantidadeTemporadas() {
         System.out.println("Deseja ver séries com até quantas temporadas? ");
-        var quantidadeTemporadas = leitura.nextInt();
+        var totalTemporadas = leitura.nextInt();
         System.out.println("Avaliações a partir de que valor? ");
         var avaliacao = leitura.nextDouble();
-        List<Serie> seriesPorTemporada = repositorio.findByTotalTemporadasAndAvaliacaoGreaterThanEqual(quantidadeTemporadas, avaliacao);
+        List<Serie> seriesPorTemporada = repositorio.seriesPorTemporadaEAvaliacao(totalTemporadas, avaliacao);
         seriesPorTemporada.forEach(System.out::println);
     }
 }
